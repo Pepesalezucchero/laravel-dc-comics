@@ -9,10 +9,11 @@
         @foreach ($comics as $comic)
         <li class="my-3 border">
             <strong>Titolo:</strong> {{ $comic -> title }} <br>
-            <strong>Data di pubblicazione:</strong> {{ $comic -> publication_year }} <br>
-            <strong>Pagine:</strong> {{ $comic -> pages }} <br>
             <strong>Prezzo:</strong> {{ $comic -> price }}&euro; <br>
-            <strong>Valutazione:</strong> {{ $comic -> ratings }}/10
+            <strong>Valutazione:</strong> {{ $comic -> ratings }}/10 <br>
+            <br>
+
+            <a href="{{ ruote('comics.show', $comic -> id) }}">Clicca per Dettagli</a>
         </li>
         @endforeach
     </ul>
