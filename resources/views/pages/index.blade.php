@@ -3,5 +3,17 @@
     <title>Laravel DC comics</title>
 @endsection
 @section('content')
-    <h1>Hello, World!</h1>
+    <h1 class="my-4">Comics: {{ count($comics) }}</h1>
+
+    <ul class = "list-unstyled">
+        @foreach ($comics as $comic)
+        <li class="my-3 border">
+            <strong>Titolo:</strong> {{ $comic -> title }} <br>
+            <strong>Data di pubblicazione:</strong> {{ $comic -> publication_year }} <br>
+            <strong>Pagine:</strong> {{ $comic -> pages }} <br>
+            <strong>Prezzo:</strong> {{ $comic -> price }}&euro; <br>
+            <strong>Valutazione:</strong> {{ $comic -> ratings }}/10
+        </li>
+        @endforeach
+    </ul>
 @endsection
