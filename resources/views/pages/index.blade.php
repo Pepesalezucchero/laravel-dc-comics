@@ -13,7 +13,7 @@
             <strong>Valutazione:</strong> {{ $comic -> ratings }}/10 <br>
             <br>
 
-            <a href="{{ ruote('comics.show', $comic -> id) }}">Clicca per Dettagli</a>
+            <a href="{{ route('comics.show', $comic -> id) }}">Clicca per Dettagli</a>
         </li>
         @endforeach
     </ul>
