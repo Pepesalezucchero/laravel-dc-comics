@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('publication_year');
             $table->integer('pages');
             $table->decimal('price');
-            $table->float('ratings', 2, 1);
+            $table->float('ratings', 3, 1);
 
             $table->timestamps();
         });

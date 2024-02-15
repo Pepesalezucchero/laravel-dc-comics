@@ -5,6 +5,8 @@
 @section('content')
     <h1 class="my-4">Comics: {{ count($comics) }}</h1>
 
+    <a class="my-4" href="{{ route('comics.create') }}">Aggiungi un nuovo Comic!</a>
+
     <ul class = "list-unstyled">
         @foreach ($comics as $comic)
         <li class="my-3 border">
