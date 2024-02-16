@@ -14,8 +14,17 @@
             <strong>Prezzo:</strong> {{ $comic -> price }}&euro; <br>
             <strong>Valutazione:</strong> {{ $comic -> ratings }}/10 <br>
             <br>
-
             <a href="{{ route('comics.show', $comic -> id) }}">Clicca per Dettagli</a>
+            <br>
+            <br>
+            <form action="{{ route('comics.destroy', $comic -> id ) }}" method="POST">
+
+                @csrf
+                @method('DELETE')
+
+                <input type="submit" value="Cancella voce">
+            </form>
+            <br>
         </li>
         @endforeach
     </ul>

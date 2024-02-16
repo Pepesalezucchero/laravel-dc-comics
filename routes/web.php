@@ -10,3 +10,5 @@ Route::get('/comics/aggiunta', [ComicController :: class, 'create']) -> name('co
 Route::post('/comics', [ComicController :: class, 'store']) -> name('comics.store');
 
 Route::get('/comics/{id}', [ComicController :: class, 'show']) -> name('comics.show');
+
+Route::delete('/comics/{id}', [ComicController :: class, 'destroy']) -> name('comics.destroy');
