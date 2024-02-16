@@ -17,6 +17,9 @@
             <a href="{{ route('comics.show', $comic -> id) }}">Clicca per Dettagli</a>
             <br>
             <br>
+            <a href="{{ route('comics.edit', $comic -> id ) }}">Modifica i dettagli di questa voce</a>
+            <br>
+            <br>
             <form action="{{ route('comics.destroy', $comic -> id ) }}" method="POST">
 
                 @csrf
