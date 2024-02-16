@@ -19,10 +19,10 @@
         <input class="my-1" placeholder="Inserisci numero di pagine" type="number" name="pages" id="pages">
         <br>
         <label for="price">Prezzo:</label>
-        <input class="my-1" placeholder="Inserisci il prezzo" type="number" name="price" id="price">
+        <input class="my-1" placeholder="Inserisci il prezzo" type="number" name="price" id="price" step="0.01">
         <br>
         <label for="ratings">Valutazione:</label>
-        <input class="my-1" placeholder="Inserisci la valutazione" type="number" name="ratings" id="ratings" min="0" max="10">
+        <input class="my-1" placeholder="Inserisci la valutazione" type="number" name="ratings" id="ratings" min="0" max="10" step="0.1">
         <br>
         <input class="my-1" type="submit" value="Aggiungi!">
     </form>
