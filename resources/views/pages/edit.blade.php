@@ -7,6 +7,15 @@
     <br>
     <h1 class="my-4">[ {{ $comic -> id}} ] Comic: {{ $comic -> title }}</h1>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('comics.update', $comic -> id) }}" method="POST">
 
         @csrf
@@ -25,7 +34,7 @@
         <input class="my-1" placeholder="Inserisci il prezzo" type="number" name="price" id="price" step="0.01" value="{{ $comic -> price }}">
         <br>
         <label for="ratings">Valutazione:</label>
-        <input class="my-1" placeholder="Inserisci la valutazione" type="number" name="ratings" id="ratings" min="0" max="10" step="0.1" value="{{ $comic -> ratings }}">
+        <input class="my-1" placeholder="Inserisci la valutazione" type="number" name="ratings" id="ratings" step="0.1" value="{{ $comic -> ratings }}">
         <br>
         <input class="my-1" type="submit" value="Modifica!">
     </form>

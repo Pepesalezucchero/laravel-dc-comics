@@ -89,7 +89,13 @@ class ComicController extends Controller
     {
         $comic = Comic :: find($id);
 
-        $data = $request -> all();
+        $data = $request->validate([
+            'title' => 'required|regex:/^[a-zA-Z0-9\s\-\'!?,.:&]+$/|min:3|max:255',
+            'publication_year' => 'required|date',
+            'pages' => 'required|integer|min:1|max:99999999999',
+            'price' => 'required|numeric|min:0|max:999999.99',
+            'ratings' => 'required|numeric|min:0|max:10',
+        ]);
 
         $comic -> title = $data['title'];
         $comic -> publication_year = $data['publication_year'];
